@@ -1,12 +1,44 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react';
+import axios from "axios";
 import Product from '../components/Product'
 
 const ProductsScreen = () => {
+
+  const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get("https://kanatlead-default-rtdb.firebaseio.com/products.json");
+        const productsArray = Object.values(response.data);
+        setProducts(productsArray );
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, []);
+
   return (
     <div className='container'>
-        <Product title="Документы" price="30" img="./public/productIco/docs.svg"/>
-        <Product title="Пустые Console" price="50" img="./public/productIco/console.svg"/>
-        <Product title="Аккаунты" price="100" img="./public/productIco/acc.svg"/>
+
+    {loading ? (
+        <p>Loading...</p>
+        ) 
+        : 
+        products.map((product) => (
+          <Product
+            key={product.id}
+            id={product.id}
+            title={product.title}
+            price={product.price}
+            img={product.imgUrl}
+          />
+        ))}
     </div>
   )
 }
