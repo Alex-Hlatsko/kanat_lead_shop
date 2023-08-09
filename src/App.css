@@ -6,6 +6,7 @@
   flex-wrap: wrap;
 }
 .product{
+  position: relative;
   margin-top: 15px;
   text-align: center;
   padding: 30px 5px;
@@ -38,4 +39,43 @@
 }
 .flag p{
   font-size: 14px;
+}
+.sell_btn{
+  position: fixed;
+  display: block;
+  padding: 1.2rem 3rem;
+  background-color: #31B545;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+.product_btn{
+  padding: 5px 15px;
+  margin-top: 10px;
+  color: #fff;
+  font-weight: 600;
+  border: none;
+}
+.btn_add{
+  background: linear-gradient(180deg, #10DFF1 0%, #EA08F2 100%);
+  margin-left: 5px;
+}
+.btn_del{
+  margin-right: 5px;
+  background-color: #EA0F0F;
+}
+.product_count{
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  top: -10px;
+  right: -5px;
+  background-color: #EF7D14;
+  border-radius: 100%;
+}
+.product_count p{
+  margin: 0;
 }
