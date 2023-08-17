@@ -1,30 +1,51 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   products: {
-    1: 0,
-    2: 0,
-    3: 0,
-  }
-}
+    1: {
+      PL: 0,
+      DE: 0,
+      JP: 0,
+      BE: 0,
+      NL: 0,
+      SE: 0,
+    },
+    2: {
+      PL: 0,
+      DE: 0,
+      JP: 0,
+      BE: 0,
+      NL: 0,
+      SE: 0,
+    },
+    3: {
+      PL: 0,
+      DE: 0,
+      JP: 0,
+      BE: 0,
+      NL: 0,
+      SE: 0,
+    },
+  },
+};
 
 export const ProductSlice = createSlice({
-  name: 'products',
+  name: "products",
   initialState,
   reducers: {
     increment: (state, action) => {
-      const productId = action.payload;
-      state.products[productId] += 1
+      const { productId, countryKey } = action.payload;
+      state.products[productId][countryKey] += 1;
     },
     decrement: (state, action) => {
-      const productId = action.payload;
-      if(state.products[productId] !== 0){
-        state.products[productId] -= 1
+      const { productId, countryKey } = action.payload;
+      if (state.products[productId][countryKey] !== 0) {
+        state.products[productId][countryKey] -= 1;
       }
     },
   },
-})
+});
 
-export const { increment, decrement } = ProductSlice.actions
+export const { increment, decrement } = ProductSlice.actions;
 
-export default ProductSlice.reducer
+export default ProductSlice.reducer;

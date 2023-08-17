@@ -5,7 +5,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
 }
-.product{
+.product, .flag{
   position: relative;
   margin-top: 15px;
   text-align: center;
@@ -26,23 +26,26 @@
   background: linear-gradient(180deg, #10DFF1 0%, #EA08F2 100%);
 }
 
-.flag{
+/* .flag{
   margin-top: 15px;
   text-align: center;
   padding: 20px 5px;
   width: 30%;
   border-radius: 5px;
   background-color: #33393F;
-}
-.flag img{
+} */
+/* .flag img{
   width: 50%;
-}
+} */
 .flag p{
   font-size: 14px;
 }
 .sell_btn{
   position: fixed;
   display: block;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
   padding: 1.2rem 3rem;
   background-color: #31B545;
   bottom: 0;

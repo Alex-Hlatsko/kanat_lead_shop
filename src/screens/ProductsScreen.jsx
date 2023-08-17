@@ -30,16 +30,24 @@ const ProductsScreen = () => {
     let totalCost = 0;
 
     for (const itemId in productCount) {
-      const quantity = productCount[itemId];
-      const product = products.find((item) => item.id === itemId);
+      const countries = productCount[itemId];
+      const productIndex = itemId - 1; // Скорректировать индекс здесь
+      const product = products[productIndex];
 
       if (product) {
-        totalCost += quantity * product.price;
+        for (const country in countries) {
+          const quantity = countries[country];
+          const price = products.find((item)=> item.id === itemId).price;
+          totalCost += quantity * price;
+        }
       }
     }
 
     return totalCost;
   };
+
+
+
 
   return (
     <>
@@ -61,9 +69,9 @@ const ProductsScreen = () => {
         )}
       </div>
       {calculateTotalCost() > 0 && (
-        <div className="sell_btn">
-          <p>Total Cost: {calculateTotalCost()}$</p>
-        </div>
+        <button className="sell_btn">
+          Total Cost: {calculateTotalCost()}$
+        </button>
       )}
     </>
 

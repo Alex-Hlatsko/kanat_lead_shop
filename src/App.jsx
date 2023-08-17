@@ -8,7 +8,7 @@ function App() {
   return (
       <Routes>
         <Route path='/' element={<ProductsScreen/>}/>
-        <Route path='/geo' element={<GeoScreen/>}/>
+        <Route path='/geo/:productId' element={<GeoScreen/>}/>
       </Routes>
   )
 }
