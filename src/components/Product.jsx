@@ -3,22 +3,32 @@ import { NavLink } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux';
 
 const Product = ({ id, title, price, img }) => {
-  const productCount = useSelector((state) => state.products.products[id])
+  const products = useSelector((state) => state.products.products);
+  const geolocationKeys = ['PL', 'DE', 'JP', 'BE', 'NL', 'SE'];
+
+  const getTotalProductCount = (productId) => {
+    let totalCount = 0;
+    geolocationKeys.forEach((key) => {
+      totalCount += products[productId][key];
+    });
+    return totalCount;
+  };
+
+  const totalProductCount = getTotalProductCount(id);
 
   return (
     <div className='product'>
-      {/* {productCount !== 0 ?
+      {totalProductCount !== 0 ?
         <div className="product_count">
-          <p>{productCount}</p>
+          <p>{totalProductCount}</p>
         </div>
         :
         ''
-      } */}
+      }
 
       <img src={img} />
       <p>{title} ({price}$)</p>
-      {/* {productCount !== 0 ? <button className='product_btn btn_del' onClick={() => { dispatch(decrement(id)) }}>DEL</button> : ''} */}
-      {/* <button className='product_btn btn_add' onClick={() => { dispatch(increment(id)) }}>ADD</button> */}
+      {totalProductCount !== 0 ? <NavLink to={`/geo/${id}`} style={{ background: '#EA0F0F'}} className='product_btn'>DEL</NavLink> : ''}
       <NavLink to={`/geo/${id}`} className='product_btn btn_add'>ADD</NavLink>
 
     </div>

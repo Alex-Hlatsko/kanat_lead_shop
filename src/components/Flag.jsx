@@ -16,14 +16,19 @@ const Flag = ({ img, title, flag_key, productId }) => {
     }
   };
 
-  // console.log(productCounts.products[1])
   const productCount = productCounts.products[productId][flag_key];
 
   return (
     <div className='flag'>
       <img src={img} alt="flag" />
       <p>{title}</p>
-      {productCount > 0 && <p>{productCount}</p>}
+
+      {productCount > 0 && 
+      <div className="product_count">
+        <p>{productCount}</p>
+      </div>
+      }
+
       {productCount !== 0 ? <button className='product_btn btn_del' onClick={handleDecrement}>DEL</button> : ''}
       <button className='product_btn btn_add' onClick={handleIncrement}>ADD</button>
     </div>

@@ -4,7 +4,6 @@ import { NavLink, useParams } from 'react-router-dom';
 
 const GeoScreen = () => {
   const { productId } = useParams();
-  // console.log(productId);
 
   return (
     <div className='container'>
@@ -14,7 +13,11 @@ const GeoScreen = () => {
         <Flag img="../public/flags/be.svg" flag_key="BE" productId={productId} title="Бельгия"/>
         <Flag img="../public/flags/nl.svg" flag_key="NL" productId={productId} title="Нидерланды"/>
         <Flag img="../public/flags/se.svg" flag_key="SE" productId={productId} title="Швеция"/>
-        <NavLink to="../">Back</NavLink>
+        <NavLink to="../">
+          <div className="back_btn">
+            Back
+          </div>
+        </NavLink>
     </div>
   )
 }

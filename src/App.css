@@ -82,3 +82,14 @@
 .product_count p{
   margin: 0;
 }
+.back_btn{
+  width: 100%;
+  padding: 20px 15px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #5A5978;
+
+}
