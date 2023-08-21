@@ -1,6 +1,7 @@
 .container{
+  margin: auto;
   max-width: 390px;
-  padding: 15px 15px;
+  padding: 15px 15px 6rem 15px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
@@ -21,27 +22,18 @@
 .product a{
   margin-top: 15px;
   display: inline-block;
+  font-size: 12px;
   padding: 5px 20px;
   border-radius: 2px;
   background: linear-gradient(180deg, #10DFF1 0%, #EA08F2 100%);
 }
-
-/* .flag{
-  margin-top: 15px;
-  text-align: center;
-  padding: 20px 5px;
-  width: 30%;
-  border-radius: 5px;
-  background-color: #33393F;
-} */
-/* .flag img{
-  width: 50%;
-} */
 .flag p{
   font-size: 14px;
 }
 .sell_btn{
   position: fixed;
+  width: 100%;
+  max-width: 360px;
   display: block;
   color: #fff;
   font-weight: 600;
@@ -49,7 +41,6 @@
   padding: 1.2rem 3rem;
   background-color: #31B545;
   bottom: 0;
-  width: 100%;
   text-align: center;
 }
 .product_btn{
@@ -83,13 +74,15 @@
   margin: 0;
 }
 .back_btn{
-  width: 100%;
-  padding: 20px 15px;
   position: fixed;
   bottom: 0;
-  right: 0;
-  text-align: center;
-  text-transform: uppercase;
+  width: 100%;
+  max-width: 360px;
+  display: block;
+  color: #fff;
+  font-weight: 600;
+  font-size: 18px;
+  padding: 1.2rem 3rem;
   background-color: #5A5978;
-
+  text-align: center;
 }

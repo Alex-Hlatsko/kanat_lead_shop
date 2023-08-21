@@ -67,12 +67,13 @@ const ProductsScreen = () => {
             ))}
           </>
         )}
-      </div>
-      {calculateTotalCost() > 0 && (
+        {calculateTotalCost() > 0 && (
         <button className="sell_btn">
           Total Cost: {calculateTotalCost()}$
         </button>
       )}
+      </div>
+      
     </>
 
   )

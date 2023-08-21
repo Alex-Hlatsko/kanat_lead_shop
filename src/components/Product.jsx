@@ -27,7 +27,7 @@ const Product = ({ id, title, price, img }) => {
       }
 
       <img src={img} />
-      <p>{title} ({price}$)</p>
+      <p>{title}<br/>({price}$)</p>
       {totalProductCount !== 0 ? <NavLink to={`/geo/${id}`} style={{ background: '#EA0F0F'}} className='product_btn'>DEL</NavLink> : ''}
       <NavLink to={`/geo/${id}`} className='product_btn btn_add'>ADD</NavLink>
 
